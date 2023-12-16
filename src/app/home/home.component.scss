@@ -22,9 +22,21 @@
 
 .alert {
   width: 300px;
-  background-color: #4CB9E7;
-  opacity: .4;
-  padding: 4px;
   box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 8px;
 
+
+}
+
+.success {
+  background-color: #C1F2B0;
+}
+
+.error {
+  background-color: #CE5A67;
+}
+
+.warn {
+  background-color: #FFA33C;
 }

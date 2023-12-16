@@ -117,6 +117,7 @@ export class NewBookingStrategy extends TimeLineStrategy {
       type: 'success',
       description: 'رزرو شما با موفقیت ثبت شد و در انتظار پذیرش میزبان است. نتیجه از طریق پیامک به اطلاع شما می رسد.'
     };
+    state.showAlertSection = true;
     state.showChatWithHost = true;
     state.submitButtonLabel = 'تماس با پشتیبانی';
     state.submitButtonCallBackFn = () => {
@@ -159,6 +160,8 @@ export class RejectBookingByGuestStrategy extends TimeLineStrategy {
     state.fullWidthButtonCallBackFn = () => {
       this.bookingDataService.navigateToSimilarRoom();
     };
+    state.showAlertSection = true;
+    state.alert = {type:'error', description:'متاسفانه رزرو شما توسط میهمان رد شد با کلیک بر روی گزینه اقامتگاه های مشابه لطفا اقامتگاه دیگری انتخاب کنید'}
     return state;
   }
 }
@@ -191,6 +194,8 @@ export class RejectBookingByHostStrategy extends TimeLineStrategy {
     state.fullWidthButtonCallBackFn = () => {
       this.bookingDataService.navigateToSimilarRoom();
     };
+    state.showAlertSection = true;
+    state.alert = {type:'error', description:'متاسفانه رزرو شما توسط میزبان رد شد با کلیک بر روی گزینه اقامتگاه های مشابه لطفا اقامتگاه دیگری انتخاب کنید'}
     return state;
   }
 }
@@ -234,6 +239,8 @@ export class RejectBookingByOtaghakStrategy extends TimeLineStrategy {
     state.fullWidthButtonCallBackFn = () => {
       this.bookingDataService.navigateToSimilarRoom();
     };
+    state.showAlertSection = true;
+    state.alert = {type:'error', description:'متاسفانه رزرو شما توسط اتاقک رد شد با کلیک بر روی گزینه اقامتگاه های مشابه لطفا اقامتگاه دیگری انتخاب کنید'}
     return state;
   }
 }
@@ -271,6 +278,7 @@ export class AcceptBookingByHostStrategy extends TimeLineStrategy {
       type: 'warn',
       description: 'رزرو شما توسط میزبان پذیرفته شد و در انتظار پرداخت است. قبل از منقضی شدن رزرو، به پرداخت آن اقدام کنید.'
     };
+    state.showAlertSection = true;
     state.showChatWithHost = true;
     state.showPaymentSection = true;
     state.showAcceptOtaghakTerms = true;
@@ -328,7 +336,7 @@ export class ConfirmBookingStrategy extends TimeLineStrategy {
       type: 'success',
       description: 'رزرو شما با موفقیت انجام شد.'
     };
-
+    state.showAlertSection = true;
     state.showChatWithHost = true;
     state.showDownloadVoucherButton = true;
     state.submitButtonLabel = 'تماس با میزبان';

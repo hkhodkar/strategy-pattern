@@ -6,8 +6,8 @@
     </div>
     <div>
 
-      <div *ngIf="bookingPageStatus.showAlertSection" class="alert">
-        {{bookingPageStatus.alert}}
+      <div *ngIf="bookingPageStatus.showAlertSection" [ngClass]="bookingPageStatus.alert?.type" class="alert">
+        {{bookingPageStatus.alert?.description}}
       </div>
 
       <div *ngIf="bookingPageStatus.showChatWithHost" class="chat">
