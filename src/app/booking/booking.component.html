@@ -1,0 +1,20 @@
+<div class="container">
+  <ng-container *ngFor="let state of timeLineStatus">
+    <div class="timeline-holder">
+
+      <div class="timeline">
+        <div [ngClass]="['circle', state.class]">
+          <span *ngIf="state.status === 'Number'" class="circle-title"> {{ state.index }}</span>
+          <span *ngIf="state.status === 'Done'" class="circle-title material-icons" data-icon="done"> </span>
+          <span *ngIf="state.status === 'Reject'" class="circle-title material-icons" data-icon="clear"> </span>
+        </div>
+        <div *ngIf="state.index > 1" class="line"></div>
+      </div>
+
+      <div class="timeline-title" [style.color]="state.titleColor">
+        {{ state.title }}
+      </div>
+
+    </div>
+  </ng-container>
+</div>

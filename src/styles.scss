@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+$pureWhite: white;
+$otaghakGreen: #01806b;
+$otaghakGreenDark: #075145;
+$otaghakGreenLight: #cce6e1;
+$neoOtaghakMiddleLightGray: #e6e6e6;
+$neoOtaghakSoLightGray: #f5f5f5;
+$otaghakErrorRedLight: #ffe5ec;
+$otaghakErrorRedDark: #e23636;
+$maxDesktop: 1920px;
+$largeDesktop: 1560px;
+$middleDesktop: 1366px;
+$smallDesktop: 1280px;
+$largeMobile: 992px;
+$mobile: 480px;
+$smallMobile: 320px;
+$minDesktopHeight: 870px;
+$neoLargeDesktop: 1201px;
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .timeline-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    .timeline {
+      --circle-border-width: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+
+      .circle {
+        width: 30px;
+        height: 30px;
+        border-style: solid;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        border-width: 2px;
+
+        &-title {
+          font-weight: bold;
+        }
+      }
+
+      .material-icons {
+        font-size: 20px;
+      }
+
+      .line {
+        height: 1.5px;
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        z-index: 0;
+      }
+    }
+
+    .timeline-title {
+      font-size: 11px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.stroke-number-green {
+  background-color: $pureWhite;
+  border-color: $otaghakGreen;
+  color: $otaghakGreen;
+
+  +.line {
+    background-color: $otaghakGreen;
+  }
+}
+
+.full-green {
+  background-color: $otaghakGreenLight;
+  border-color: $otaghakGreen;
+  color: $otaghakGreen;
+
+  +.line {
+    background-color: $otaghakGreen;
+  }
+}
+
+.stroke-number-gray {
+  background-color: $neoOtaghakSoLightGray;
+  border-color: $neoOtaghakMiddleLightGray;
+  color: #cccccc;
+
+  +.line {
+    background-color: $neoOtaghakMiddleLightGray;
+  }
+}
+
+.full-gray {
+  background-color: $neoOtaghakSoLightGray;
+  border-color: $neoOtaghakMiddleLightGray;
+  color: #cccccc;
+
+  +.line {
+    background-color: $neoOtaghakMiddleLightGray;
+  }
+}
+
+.full-red {
+  background-color: $otaghakErrorRedLight;
+  border-color: $otaghakErrorRedDark;
+  color: $otaghakErrorRedDark;
+
+  +.line {
+    background-color: $otaghakGreen;
+  }
+}
+
+
+// @media only screen and (min-width: $neoLargeDesktop) {
+//   &.container {
+//     .timeline-holder {
+//       .timeline-title {
+//         font-size: 14px;
+//         font-weight: 500;
+//       }
+//     }
+//   }
+// }

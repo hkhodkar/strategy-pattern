@@ -1,0 +1,17 @@
+.booking {
+  &-container {
+    padding: 1rem;
+    background-color: #fefefe;
+  }
+
+  &-img {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+  }
+}
