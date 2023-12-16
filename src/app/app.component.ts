@@ -10,42 +10,7 @@ import { BookingPageStatusModel } from './booking/models/booking-status.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor(
-    private injector: Injector,
-  ) { }
 
-  title = 'strategy-pattern';
-
-  timeLineStatus!: TimeLineModel[];
-  strategy!: TimeLineStrategy;
-  bookingStatus!: bookingStatusType;
-  public bookingPageStatus!: BookingPageStatusModel;
-
-  mockDemo = [
-    OpenBookingStatusResult,
-    NewBookingStatusResult,
-    RejectBookingByGuestStatusResult,
-    RejectBookingByHostStatusResult,
-    RejectBookingByOtaghakStatusResult,
-    AcceptBookingByHostStatusResult,
-    ConfirmBookingStatusResult,
-    CancelBookingByGuestStatusResult,
-    CancelBookingByHostStatusResult,
-    CancelBookingByOtaghakStatusResult,
-    FinishedBookingStatusResult,
-    UnpaidBookingStatusResult
-  ]
-
-  ngOnInit(): void {
-    let random = Math.floor(Math.random() * 11);
-    let bookingStatus = this.mockDemo[random];
-    this.bookingStatus = bookingStatus.key;
-    this.strategy = this.injector.get<TimeLineStrategy>(StrategyMap.get(this.bookingStatus));
-    this.bookingPageStatus = this.strategy.setStatus();
-    this.timeLineStatus = this.bookingPageStatus.timeLineModel;
-    console.log(this.bookingPageStatus);
-
-  }
 }

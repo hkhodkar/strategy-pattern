@@ -1,0 +1,74 @@
+<app-booking [timeLineStatus]="timeLineStatus"></app-booking>
+<mat-card>
+  <div class="booking-all-container">
+    <div class="booking-all-img">
+      <img src="https://cdn.otaghak.com/otg-images-new/Large/f09269b0-7bfd-4816-87a3-f7a2954b87b9.webp" alt="">
+    </div>
+    <div>
+
+      <div *ngIf="bookingPageStatus.showAlertSection" class="alert">
+        {{bookingPageStatus.alert}}
+      </div>
+
+      <div *ngIf="bookingPageStatus.showChatWithHost" class="chat">
+        <span> چت با میزبان</span>
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+          <mat-icon>chat</mat-icon>
+        </button>
+      </div>
+
+      <div *ngIf="bookingPageStatus.showDiscountSection">
+        <button color="accent" type="button" mat-raised-button>وارد کردن کد تخفیف</button>
+      </div>
+      <div *ngIf="bookingPageStatus.showDownloadVoucherButton" class="download">
+        <button mat-raised-button> دانلود فاکتور <mat-icon>download</mat-icon></button>
+      </div>
+
+      <div *ngIf="bookingPageStatus.showPassengerTab">
+        <mat-card>
+          <mat-card-header>اطلاعات مشتری</mat-card-header>
+          <mat-card-content>
+            نام: هاتف
+            نام خانوادگی: خودکار
+            کدملی: ۰۰۱۲۳۴۵۶۷۸
+            شماره تماس: ۰۹۱۲۳۴۵۶۷۸۹
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div *ngIf="bookingPageStatus.showPaymentSection">
+        <mat-tab-group>
+          <mat-tab label="کیف پول"> <span style="display: block;padding: 1rem;">کیف پول</span></mat-tab>
+          <mat-tab label="درگاه بانکی"><span style="display:block; padding: 1rem;">درگاه بانکی</span></mat-tab>
+        </mat-tab-group>
+      </div>
+
+      <div *ngIf="bookingPageStatus.showSubmitComment">
+        <mat-form-field class="example-full-width">
+          <mat-label>ثبت نظر</mat-label>
+          <textarea matInput placeholder="از نظافت راضی بودم و ...."></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="bookingPageStatus.fullWidthButtonCallBackFn" *ngIf="bookingPageStatus.showFullWidthButton"
+    mat-raised-button color="primary" class="full-width">
+    {{bookingPageStatus.fullWidthButtonLabel}}
+  </button>
+
+  <div class="actions">
+
+    <button type="button" (click)="bookingPageStatus.submitButtonCallBackFn"
+      *ngIf="!bookingPageStatus.showFullWidthButton" mat-raised-button color="primary"
+      style="margin-left: 10px;">{{bookingPageStatus.submitButtonLabel}}</button>
+
+    <button type="button" (click)="bookingPageStatus.secondActionCallBackFn"
+      *ngIf="!bookingPageStatus.showFullWidthButton" mat-raised-button
+      color="accent">{{bookingPageStatus.secondActionLabel}}</button>
+  </div>
+
+</mat-card>
+
+
+<button style="margin: 1rem;" type="button" (click)="changeState()" mat-raised-button color="primary">Save</button>

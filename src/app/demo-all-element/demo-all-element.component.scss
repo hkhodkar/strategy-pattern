@@ -1,0 +1,30 @@
+.booking-all {
+  &-container {
+    padding: 1rem;
+    background-color: #fefefe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+
+  &-img {
+
+
+    img {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+  }
+}
+
+.alert {
+  width: 300px;
+  background-color: #4CB9E7;
+  opacity: .4;
+  padding: 4px;
+  box-sizing: border-box;
+
+}

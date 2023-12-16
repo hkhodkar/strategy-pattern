@@ -134,3 +134,32 @@ $neoLargeDesktop: 1201px;
 //     }
 //   }
 // }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.chat {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.download {
+  padding: 16px;
+}
+
+.actions {
+  padding: 10px;
+}
+
+.full-width {
+  width: 100%;
+}

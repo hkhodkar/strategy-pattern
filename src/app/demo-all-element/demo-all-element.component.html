@@ -1,0 +1,53 @@
+<mat-card>
+  <div class="booking-all-container">
+    <div class="booking-all-img">
+      <img src="https://cdn.otaghak.com/otg-images-new/Large/f09269b0-7bfd-4816-87a3-f7a2954b87b9.webp" alt="">
+    </div>
+    <div>
+      <div class="alert">
+        پس از ثبت این مرحله باید منتظر تایید میزبان باشید
+      </div>
+      <div class="chat">
+        <span> چت با میزبان</span>
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+          <mat-icon>chat</mat-icon>
+        </button>
+      </div>
+      <div>
+        <button color="accent" type="button" mat-raised-button>وارد کردن کد تخفیف</button>
+      </div>
+      <div class="download">
+        <button mat-raised-button> دانلود فاکتور <mat-icon>download</mat-icon></button>
+      </div>
+      <div>
+        <mat-card>
+          <mat-card-header>اطلاعات مشتری</mat-card-header>
+          <mat-card-content>
+            نام: هاتف
+            نام خانوادگی: خودکار
+            کدملی: ۰۰۱۲۳۴۵۶۷۸
+            شماره تماس: ۰۹۱۲۳۴۵۶۷۸۹
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div>
+        <mat-tab-group>
+          <mat-tab label="کیف پول"> <span style="display: block;padding: 1rem;">کیف پول</span></mat-tab>
+          <mat-tab label="درگاه بانکی"><span style="display:block; padding: 1rem;">درگاه بانکی</span></mat-tab>
+        </mat-tab-group>
+      </div>
+      <div>
+        <mat-form-field class="example-full-width">
+          <mat-label>ثبت نظر</mat-label>
+          <textarea matInput placeholder="از نظافت راضی بودم و ...."></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button color="primary" class="full-width">رزرو</button>
+  <div class="actions">
+    <button mat-raised-button color="primary" style="margin-left: 10px;">رزرو</button>
+    <button mat-raised-button color="accent">مسیریابی</button>
+  </div>
+
+</mat-card>
